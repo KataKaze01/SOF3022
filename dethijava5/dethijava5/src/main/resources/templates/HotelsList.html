@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<body>
+<div th:fragment="list">
+    <table class="table table-bordered table-hover text-center">
+        <thead class="table-secondary">
+            <tr>
+                <th>ID</th><th>Name</th><th>Location</th><th>Rating</th>
+                <th>Rooms</th><th>Email</th><th>Action</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr th:each="h : ${items}">
+                <td th:text="${h.hotelID}"></td>
+                <td th:text="${h.hotelName}"></td>
+                <td th:text="${h.location}"></td>
+                <td th:text="${h.rating}"></td>
+                <td th:text="${h.roomsAvailable}"></td>
+                <td th:text="${h.contactEmail}"></td>
+                <td>
+                    <a th:href="@{/edit/{id}(id=${h.hotelID})}" class="btn btn-sm btn-warning">Edit</a>
+                    <a th:href="@{/delete/{id}(id=${h.hotelID})}" class="btn btn-sm btn-danger">Delete</a>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+</div>
+</body>
+</html>

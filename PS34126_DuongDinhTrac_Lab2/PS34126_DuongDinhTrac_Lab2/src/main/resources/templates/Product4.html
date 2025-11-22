@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+    <form action="/product/check4" method=post>
+        <label>Name</label>
+        <input name="name" >
+        <label>Price</label>
+        <input name="price" type="number"><br>
+        <button type="submit">Save</button>
+
+    </form>
+
+    <ul>
+        <li th:text="${product.name}"></li>
+        <li th:text="${product.price}"></li>
+    </ul>
+
+    <h3>Sản phẩm nhập</h3>
+    <div th:if="${product2 != null}">
+        <ul>
+            <li th:text="${product2.name}"></li>
+            <li th:text="${product2.price}"></li>
+        </ul>
+    </div>
+
+    <h2>Danh sách sản phẩm đã nhập</h2>
+    <ul th:if="${products != null}">
+        <li th:each="p : ${products}">
+            <span th:text="${p.name}"></span>
+            <span th:text="${p.price}"></span>
+        </li>
+    </ul>
+</body>
+</html>

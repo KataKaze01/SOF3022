@@ -1,0 +1,9 @@
+nếu bị chiếm cổng :
+netstat -ano | findstr :8080
+Nó sẽ hiện ra dòng như:
+TCP    0.0.0.0:8080   ...   LISTENING   12345
+→ Con số cuối (ở đây là 12345) là PID (ID tiến trình).
+Dừng tiến trình đó:
+taskkill /PID 12345 /F
+Sau đó chạy lại:
+.\gradlew bootrun

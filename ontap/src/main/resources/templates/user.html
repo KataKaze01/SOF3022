@@ -1,0 +1,53 @@
+    <!DOCTYPE html>
+    <html xmlns:th="http://www.thymeleaf.org">
+    <head>
+        <title>User Management - CRUD</title>
+        <style>
+            input, button { margin: 5px; }
+            table, th, td { border: 1px solid black; border-collapse: collapse; padding: 5px; }
+        </style>
+    </head>
+    <body>
+    <h2>User Management – CRUD</h2>
+
+    <form th:action="@{/users/save}" th:object="${user}" method="post">
+        <label>User ID:</label>
+        <input type="text" th:field="*{id}" th:readonly="${user.id != null}" required/><br/>
+        <label>Password:</label>
+        <input type="text" th:field="*{password}" /><br/>
+        <label>Full-name:</label>
+        <input type="text" th:field="*{fullname}" /><br/>
+        <label>Email:</label>
+        <input type="email" th:field="*{email}" /><br/>
+        <label>Admin:</label>
+        <input type="checkbox" th:field="*{admin}" /><br/>
+
+        <button type="submit" th:text="${user.id == null} ? 'Create' : 'Update'">Create</button>
+        <a th:href="@{/users}"><button type="button">Reset</button></a>
+    </form>
+
+    <h3>User List</h3>
+    <table>
+        <tr>
+            <th>No</th>
+            <th>User ID</th>
+            <th>Password</th>
+            <th>Full-name</th>
+            <th>Email</th>
+            <th>Admin</th>
+            <th>Edit</th>
+            <th>Delete</th>
+        </tr>
+        <tr th:each="u, iterStat : ${users}">
+            <td th:text="${iterStat.index + 1}"></td>
+            <td th:text="${u.id}"></td>
+            <td th:text="${u.password}"></td>
+            <td th:text="${u.fullname}"></td>
+            <td th:text="${u.email}"></td>
+            <td th:text="${u.admin ? 'Yes' : 'No'}"></td>
+            <td><a th:href="@{/users/edit/{id}(id=${u.id})}">Edit</a></td>
+            <td><a th:href="@{/users/delete/{id}(id=${u.id})}" onclick="return confirm('Delete this user?')">Delete</a></td>
+        </tr>
+    </table>
+    </body>
+    </html>

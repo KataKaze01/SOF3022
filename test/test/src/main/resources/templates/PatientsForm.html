@@ -1,0 +1,16 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<body>
+    <div th:fragment="form">
+        <form th:action="@{/patient/save}" method="post" th:object="${patient}">
+            Id:<input th:field="*{id}" required th:readonly="${editing}" /><br>
+            FN:<input th:field="*{firstname}"><br>
+            LN:<input th:field="*{lastname}"><br>
+            DOB:<input type="date" th:field="*{dob}"><br>
+            Medical Record:<input type="text" th:field="*{medicalrecord}"><br>
+            <button type="submit">save</button>
+            <a th:href="@{/patient}">reset</a>
+        </form>
+    </div>
+</body>
+</html>

@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ProjectModuleManager">
+    <modules>
+      <module fileurl="file://$PROJECT_DIR$/.idea/SOF3022.iml" filepath="$PROJECT_DIR$/.idea/SOF3022.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/TS01135_Java5.main.iml" filepath="$PROJECT_DIR$/.idea/modules/TS01135_Java5.main.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/TS01135_NguyenLeNganHa_Java5_Ontap.main.iml" filepath="$PROJECT_DIR$/.idea/modules/TS01135_NguyenLeNganHa_Java5_Ontap.main.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/TS01135_NguyenLeNganHa_Java5_Ontap2.main.iml" filepath="$PROJECT_DIR$/.idea/modules/TS01135_NguyenLeNganHa_Java5_Ontap2.main.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/com.example.TS01135_Java5.main.iml" filepath="$PROJECT_DIR$/.idea/modules/com.example.TS01135_Java5.main.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/lab4_java5.main.iml" filepath="$PROJECT_DIR$/.idea/modules/lab4_java5.main.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/lab5_java5.main.iml" filepath="$PROJECT_DIR$/.idea/modules/lab5_java5.main.iml" />
+    </modules>
+  </component>
+</project>
